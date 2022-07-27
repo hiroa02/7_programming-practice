@@ -33,17 +33,30 @@ values('".$_POST['last']."','".$_POST['first']."','".$_POST['kanala']."','".$_PO
        <main>
             <h1>アカウント登録完了画面</h1>
             <?php
-                try{
-                    $dbh=new PDO("mysql:dbname=di.blog;host=localhost;" ,"root" ,"");
-                    if($dbh=null){
-                        throw new Exception();
-                    }else{
-                        echo '<p style="font-size:50px;text-align:center;">登録完了しました。</p>';
-                    }
+                // try{
+                //     $dbh=new PDO("mysql:dbname=di.blog;host=localhost;" ,"root" ,"");
+                //     if($dbh=null){
+                //         throw new Exception();
+                //     }else{
+                //         echo '<p style="font-size:50px;text-align:center;">登録完了しました。</p>';
+                //     }
                     
-                }catch (Exception $e){
-                    echo '<p style="font-size:50px;text-align:center;color:red;">エラーが発生したためアカウント登録できません</p>';
-                }
+                // }catch (Exception $e){
+                //     echo '<p style="font-size:50px;text-align:center;color:red;">エラーが発生したためアカウント登録できません</p>';
+                // }
+                try{
+                    $DB_DATABASE = 'di.blog';
+                    $DB_USERNAME = 'root';
+                    $DB_PASSWORD = '';
+                    $DB_OPTION = 'charset=utf8';
+                    $PDO_DSN = "mysql:host=localhost;dbname=" . $DB_DATABASE . ";" . $DB_OPTION;
+                    $db = new PDO($PDO_DSN, $DB_USERNAME, $DB_PASSWORD,
+                    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,]);
+                    echo '<p style="font-size:50px;text-align:center;">登録完了しました。</p>';
+                    $db=null;
+                    } catch(PDOException $e){
+                        echo '<p style="font-size:50px;text-align:center;color:red;">エラーが発生したためアカウント登録できません</p>';
+                   }
            ?>
             <input type="button" onclick="location.href='./di.html'" value="TOPページに戻る">
 
