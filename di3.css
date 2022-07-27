@@ -1,0 +1,49 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+p img{
+    height: 100px;
+    margin-left: 45px;
+}
+header{
+    width: 93%;
+    height: 40px;
+    background-color: black;
+    margin-left: 45px;
+}
+header ul li{
+    float: left;
+    list-style: none;
+    padding-left: 20px;
+    color: white;
+    line-height:15px;
+    
+}
+h1{
+    margin-left: 80px;
+    font-size: 30px;
+}
+div{
+    text-align: center;
+}
+div label{
+    margin: 15px;
+}
+div p1{
+    margin: 15px;
+}
+footer{
+    clear: left;
+    width:93%;
+    height:60px;
+    margin-top: auto;
+    /* position: absolute;
+    bottom:0px; */
+    margin-left: 45px;
+    color:white;
+    background-color: black;
+    text-align: center;
+    line-height: 60px;
+}
