@@ -49,13 +49,13 @@
 
                 <div>
                     <label>メールアドレス</label>
-                    <input type="email" size="35" maxlength="100" name="mail"  pattern="^[a-zA-Z0-9.!#$&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$">
+                    <input type="text" size="35" maxlength="100" name="mail"  pattern="^[0-9A-Za-z-@.]+$">
                 </div>
                 <div id="e"></div>
 
                 <div>
                     <label>パスワード</label>
-                    <input type="password" size="35" maxlength="10" name="pass"  pattern="^[a-zA-Z0-9]+$">
+                    <input type="text" size="35" maxlength="10" name="pass"  pattern="^[a-zA-Z0-9]+$">
                 </div>
                 <div id="f"></div>
 

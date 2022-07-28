@@ -40,7 +40,7 @@
                 <p1><?php echo $_POST['mail'];?></p1><br>
 
                 <label>パスワード</label>
-                <p1><?php echo $_POST['pass'];?></p1><br>
+                <p1><?php echo str_repeat("●",mb_strlen($_POST['pass'],"UTF8"));?></p1><br>
 
                 <label>性別</label>
                 <p1><?php echo $_POST['man'];?></p1><br>

@@ -1,13 +1,3 @@
-<?php
-mb_internal_encoding("utf8");
-
-$pdo = new PDO("mysql:dbname=di.blog;host=localhost;" ,"root" ,"");
-$pdo ->exec("insert into account(family_name,last_name,family_name_kana,last_name_kana,mail,password,gender,postal_code,prefecture,
-address_1,address_2,authority,delete_flag)
-values('".$_POST['last']."','".$_POST['first']."','".$_POST['kanala']."','".$_POST['kanafi']."','".$_POST['mail']."','".$_POST['pass']."','".$_POST['man']."'
-,'".$_POST['postcode']."','".$_POST['address']."','".$_POST['municipalities']."','".$_POST['banti']."','".$_POST['authority']."','".$_POST['a']."');");
-?>
-
 <DOCTYPE HTML>
 <html lang="ja">
     <head>
@@ -33,25 +23,13 @@ values('".$_POST['last']."','".$_POST['first']."','".$_POST['kanala']."','".$_PO
        <main>
             <h1>アカウント登録完了画面</h1>
             <?php
-                // try{
-                //     $dbh=new PDO("mysql:dbname=di.blog;host=localhost;" ,"root" ,"");
-                //     if($dbh=null){
-                //         throw new Exception();
-                //     }else{
-                //         echo '<p style="font-size:50px;text-align:center;">登録完了しました。</p>';
-                //     }
-                    
-                // }catch (Exception $e){
-                //     echo '<p style="font-size:50px;text-align:center;color:red;">エラーが発生したためアカウント登録できません</p>';
-                // }
+            mb_internal_encoding("utf8");
                 try{
-                    $DB_DATABASE = 'di.blog';
-                    $DB_USERNAME = 'root';
-                    $DB_PASSWORD = '';
-                    $DB_OPTION = 'charset=utf8';
-                    $PDO_DSN = "mysql:host=localhost;dbname=" . $DB_DATABASE . ";" . $DB_OPTION;
-                    $db = new PDO($PDO_DSN, $DB_USERNAME, $DB_PASSWORD,
-                    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,]);
+
+                    $pdo = new PDO("mysql:dbname=di.blog;host=localhost;" ,"root" ,"");
+                    $pdo ->exec("insert into account(family_name,last_name,family_name_kana,last_name_kana,mail,password,gender,postal_code,prefecture,"
+                    ."address_1,address_2,authority,delete_flag)"
+                    ."values('".$_POST['last']."','".$_POST['first']."','".$_POST['kanala']."','".$_POST['kanafi']."','".$_POST['mail']."','".$_POST['pass']."','".$_POST['man']."','".$_POST['postcode']."','".$_POST['address']."','".$_POST['municipalities']."','".$_POST['banti']."','".$_POST['authority']."','".$_POST['a']."');");
                     echo '<p style="font-size:50px;text-align:center;">登録完了しました。</p>';
                     $db=null;
                     } catch(PDOException $e){
