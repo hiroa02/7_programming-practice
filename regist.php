@@ -61,7 +61,7 @@
 
                 <div>
                     <label>性別</label>
-                    <input type="radio" name="man"  value="男">男
+                    <input type="radio" name="man"  value="男" checked="checked">男
                     <input type="radio" name="man" value="女">女
                 </div>
                 <div id="g"></div>
@@ -94,7 +94,7 @@
 
                 <div>
                     <label>住所(市区町村)</label>
-                    <input type="text" size="35" maxlength="10" name="municipalities" pattern="[-\u4E00-\u9FFF\u3040-\u309F-\uFF66-\uFF9F\u30A1-\u30F60-9 ０-９_\s]*">
+                    <input type="text" size="35" maxlength="10" name="municipalities" pattern="[-\u4E00-\u9FFF\u3040-\u309F―\uFF66-\uFF9F\u30A1-\u30F60-9 ０-９_\s]*">
                 </div>
                 <div id="j"></div>
 
