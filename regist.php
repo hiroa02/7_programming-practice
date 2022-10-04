@@ -16,6 +16,7 @@
                 <li>問い合わせ</li>
                 <li>その他</li>
                 <li><a href="regist.php">アカウント登録</a></li>
+                <li><a href="list.php">アカウント一覧画面</a></li>
             </ul>
        </header>
 
@@ -100,7 +101,7 @@
 
                 <div>
                     <label>住所(番地)</label>
-                    <input type="text" size="35" maxlength="100" name="banti" pattern="[-\u4E00-\u9FFF\u3040-\u309F―\uFF66-\uFF9F\u30A1-\u30F60-9 ０-９_\s]*">
+                    <input type="text" size="35" maxlength="100" name="banti" pattern="[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠０-９0-9]+[-ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠０-９0-9]+[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠０-９0-9]$">
                 </div>
                 <div id="k"></div>
 
