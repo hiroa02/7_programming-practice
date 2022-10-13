@@ -95,13 +95,13 @@
 
                 <div>
                     <label>住所(市区町村)</label>
-                    <input type="text" size="35" maxlength="10" name="municipalities" pattern="[-\u4E00-\u9FFF\u3040-\u309F―\uFF66-\uFF9F\u30A1-\u30F60-9 ０-９_\s]*">
+                    <input type="text" size="35" maxlength="10" name="municipalities" pattern="[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠０-９0-9]+[-|ー |　ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠０-９0-9]+[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠０-９0-9]$">
                 </div>
                 <div id="j"></div>
 
                 <div>
                     <label>住所(番地)</label>
-                    <input type="text" size="35" maxlength="100" name="banti" pattern="[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠０-９0-9]+[-ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠０-９0-9]+[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠０-９0-9]$">
+                    <input type="text" size="35" maxlength="100" name="banti" pattern="[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠０-９0-9]+[-|ー |　ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠０-９0-9]+[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠０-９0-9]$">
                 </div>
                 <div id="k"></div>
 
@@ -204,6 +204,10 @@
                     target=document.getElementById("j");
                     target.style.color="red";
                     target.innerHTML="住所が(市区町村)未入力です。";
+                }else if(~document.form.municipalities.value.indexOf('--')||~document.form.municipalities.value.indexOf('ーー')){
+                    target=document.getElementById("j");
+                    target.style.color="red";
+                    target.innerHTML="ハイフンが連続しています。";    
                 }else{
                     target=document.getElementById("j");
                     target.innerHTML="";
@@ -212,6 +216,10 @@
                     target=document.getElementById("k");
                     target.style.color="red";
                     target.innerHTML="住所(番地)が未入力です。";
+                }else if(~document.form.banti.value.indexOf('--')||~document.form.banti.value.indexOf('ーー')){
+                    target=document.getElementById("k");
+                    target.style.color="red";
+                    target.innerHTML="ハイフンが連続しています。";
                 }else{
                     target=document.getElementById("k");
                     target.innerHTML="";
@@ -225,8 +233,8 @@
                     target.innerHTML="";
                 }
                 if(!(form.last.value==""||form.first.value==""||form.kanala.value==""||form.kanafi.value==""||form.mail.value==""
-                ||form.pass.value==""||form.man.value==""||form.postcode.value==""||form.address.value==""||form.municipalities.value==""
-                ||form.banti.value==""||form.authority.value=="")){
+                ||form.pass.value==""||form.man.value==""||form.postcode.value==""||form.address.value==""||form.municipalities.value==""||form.municipalities.value.indexOf('--')||form.municipalities.value.indexOf('ーー')
+                ||form.banti.value==""||form.banti.value.indexOf('--')||form.banti.value.indexOf('ーー')||form.authority.value=="")){
                     return true;
                 }else{
                     return false;
